@@ -36,12 +36,12 @@ public class MainController {
 		return this.userservice.saveUser(user);
 	}
 	
-	//@GetMapping({"/usuario/{id}"})
-	//public Optional<User> getUserById(@PathVariable("id") Integer id){
-	//	return this.userservice.getUser(id);
-	//}
+	@GetMapping({"/usuario/{id}"})
+	public Optional<User> getUserById(@PathVariable("id") Integer id){
+		return this.userservice.getUser(id);
+	}
 	
-	@GetMapping({"/usuario/{name}"})
+	@GetMapping({"/{name}"})
 	public User getUserName(@PathVariable("name") String name){
 		return this.userservice.getUserByName(name);
 	}
